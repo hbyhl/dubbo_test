@@ -1,0 +1,28 @@
+dubbo:
+  config:
+    # 开启多个protocol配置绑定
+    multiple: true
+  # 注册中心配置
+  registry:
+    id: dubboshop-registry
+    address: zookeeper://sim.zk.test2pay.com:32181
+    group: dubboshop
+    simplified: true
+  application:
+    name: dubboshop-consumer
+    id: dubboshop-consumer
+    qos-enable:  false
+    qos-accept-foreign-ip: true
+    qos-port: 22223
+  protocols:
+    dubbo:
+      name: dubbo
+      port: 20882
+      server: netty4
+    rest:
+      name: rest
+      server: tomcat
+      port: 8082
+  scan:
+    # dubbo 服务提供者实现类所在包
+    base-packages: com.provider.service
