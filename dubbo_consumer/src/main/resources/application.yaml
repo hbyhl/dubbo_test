@@ -5,7 +5,10 @@ dubbo:
   # 注册中心配置
   registry:
     id: dubboshop-registry
-    address: zookeeper://sim.zk.test2pay.com:32181
+#    address: zookeeper://sim.zk.test2pay.com:32181
+    address: nacos://localhost:8848
+    username: nacos
+    password: nacos
     group: dubboshop
     simplified: true
   application:
